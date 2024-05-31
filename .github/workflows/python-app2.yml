@@ -1,0 +1,81 @@
+import os 
+
+size = os.stat("test.txt")
+
+if size == 0:
+    print('file is empty')
+else:
+    print('conversion complete')
+print("------------------\n")
+def replace_foreign_characters(file_path):
+    translation_tablea = str.maketrans("áàăắằẵẳâấầẫẩǎåǻäǟãȧǡąāảȁȃạặậḁᶏⱥ", 
+         "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
+    translation_tableA = str.maketrans("ÁÀĂẮẰẴẲÂẤẦẪẨǍÅǺÄǞÃȦǠĄĀẢȀȂẠẶẬḀȺ", "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
+    translation_tableB = str.maketrans("ḂḃḄḅḆḇɃƀƁɓƂƃᵬᶀ","BbBbBbBbBbBbbb") 
+    translation_tableC = str.maketrans("ĆćĈĉČčĊċÇçḈḉȻȼ","CcCcCcCcCcCcCc") 
+    translation_tableD = str.maketrans("ĎďḊḋḐḑḌḍḒḓḎḏĐđÐðƉɖƊɗƋƌᵭᶁᶑȡ","DdDdDdDdDdDdDdDdDdDdDddddd")
+    translation_tableE = str.maketrans("ÉéÈèÊêḘḙĚěĔĕẼẽḚḛẺẻĖėËëȨȩĘęᶒɆɇȄȅẾếỀềỄễỂểḜḝḖḗḔḕȆȇẸẹỆệ","EeEeEeEeEeEeEeEeEeEeEeEeEeeEeEeEeEeEeEeEeEeEeEeEeEe")
+    translation_tableF = str.maketrans("ḞḟƑƒᵮᶂ","FfFfff")
+    translation_tableG = str.maketrans("ǴǵĞğĜĝǦǧĠġĢģḠḡǤǥƓɠ", "GgGgGgGgGgGgGgGgGg")
+    translation_tableH = str.maketrans("ĤĥȞȟĦħḨḩⱧⱨẖẖḤḥḢḣḦḧḪḫ", "HhHhHhHhHhHhHhHhHhHh")
+    translation_tableK = str.maketrans("ƘƙꝀꝁḰḱǨǩḲḳĶķᶄⱩⱪḴḵ","KkKkKkKkKkKkkKkKk")
+    translation_tableI = str.maketrans("ỊịĬĭÎîǏǐƗɨÏïḮḯÍíÌìȈȉỈỉȊȋĨĩḬḭ", "IiIiIiIiIiIiIiIiIiIiIiIiIiIi")
+    translation_tableJ = str.maketrans("ĴĵǰɈɉ","JjjJj")
+    translation_tableL = str.maketrans("ĹĺŁłĽľḸḹĻļĿŀḶḷḺḻḼḽȽƚⱠⱡ", "LlLlLlLlLlLlLlLlLlLlLl")
+    translation_tableM = str.maketrans("ḾḿṀṁṂṃᵯ","MmMmMmm")
+    translation_tableN = str.maketrans("ŃńÑñŇňǸǹṄṅṆṇŅņṈṉṊṋꞤꞥᵰᶇ","NnNnNnNnNnNnNnNnNnNnnn")
+    translation_tableO = str.maketrans( "ØøǾǿÖöȪȫÓóÒòÔôỐốỒồỔổỖỗỘộǑǒŐőŎŏȎȏȮȯȰȱỌọƟɵƠơỚớỜờỠỡỢợỞởỎỏŌōṒṓṐṑÕõȬȭṌṍṎṏ",                                    "OoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOoOo")
+    translation_tableP = str.maketrans("ṔṕṖṗⱣᵽƤƥᵱᶈ", "PpPpPpPppp")
+    translation_tableQ = str.maketrans("ʠɊɋ", "QQq") 
+    translation_tableR = str.maketrans("ŔŕɌɍŘřŖŗṘṙȐȑȒȓṚṛṜṝṞṟꞦꞧⱤɽᵲᵳᶉ","RrRrRrRrRrRrRrRrRrRrRrRrrrr")
+    translation_tableS = str.maketrans("ŚśṠṡẛṨṩṤṥṢṣꞨꞩŜŝṦṧŠšŞşȘșᶊⱾȿᵴᶳ", "SsSsSsSsSsSsSsSsSsSsSsSsSsss")
+    translation_tableT = str.maketrans("ŤťṪṫẗŢţṬṭƮʈȚțƫṰṱṮṯŦŧȾⱦƬƭᵵᶵ", "TtTtTtTtTtTtTtTtTtTtTtTttt")
+    translation_tableU = str.maketrans("ŬŭɄʉᵾỤụÜüǛǜǗǘǙǚǕǖṲṳÚúÙùÛûṶṷǓǔȖȗŰűŬŭƯưỨứỪừỬửỰựỮỮỦủŪūṺṻŨũṸṹṴṵᶙŲųȔȕŮů",
+"UuUuuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUuUUUuUuUuUuUuUuuUuUuUu")
+    translation_tableV = str.maketrans("ṼṽṾṿƲʋᶌ", "VvVvVvv")
+    translation_tableW = str.maketrans("ẂẃẀẁŴŵẄẅẆẇẈẉẘ","WwWwWwWwWwWww")
+    translation_tableX = str.maketrans("ẌẍẊẋᶍ", "XxXxx")
+    translation_tableY = str.maketrans("ÝýỲỳŶŷŸÿỸỹẎẏỴỵẙỶỷȲȳɎɏƳƴ","YyYyYyYyYyYyYyyYyYyYyYy")
+    translation_tableZ = str.maketrans("źẐẑŽžŻżẒẓẔẕƵƶᵶᶎⱫⱬ", "źẐẑŽžŻżẒẓẔẕƵƶᵶᶎⱫⱬ")
+
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        content = file.read()
+        translated_content = content.translate(translation_tablea)
+        # ---- other letters
+        translated_content = translated_content.replace("ß", "ss")
+        # ---- A through Z
+        translated_content = translated_content.translate(translation_tableA)
+        translated_content = translated_content.translate(translation_tableB)
+        translated_content = translated_content.translate(translation_tableC)
+        translated_content = translated_content.translate(translation_tableD)
+        translated_content = translated_content.translate(translation_tableE)
+        translated_content = translated_content.translate(translation_tableF)
+        translated_content = translated_content.translate(translation_tableG)
+        translated_content = translated_content.translate(translation_tableH)
+        translated_content = translated_content.translate(translation_tableI)
+        translated_content = translated_content.translate(translation_tableJ)
+        translated_content = translated_content.translate(translation_tableK)
+        translated_content = translated_content.translate(translation_tableL)
+        translated_content = translated_content.translate(translation_tableM)
+        translated_content = translated_content.translate(translation_tableN)
+        translated_content = translated_content.translate(translation_tableO)
+        translated_content = translated_content.translate(translation_tableP)
+        translated_content = translated_content.translate(translation_tableQ)
+        translated_content = translated_content.translate(translation_tableR)
+        translated_content = translated_content.translate(translation_tableS)
+        translated_content = translated_content.translate(translation_tableT)
+        translated_content = translated_content.translate(translation_tableU)
+        translated_content = translated_content.translate(translation_tableV)
+        translated_content = translated_content.translate(translation_tableW)
+        translated_content = translated_content.translate(translation_tableX)
+        translated_content = translated_content.translate(translation_tableY)
+        translated_content = translated_content.translate(translation_tableZ)
+         
+        
+    with open(file_path, 'w', encoding='utf-8') as file:
+        file.write(translated_content)
+
+
+file_path = 'test.txt'
+replace_foreign_characters(file_path)
